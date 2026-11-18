@@ -1,0 +1,4 @@
+# Generated output: main.ts rebuilds it from the snapshot. Never committed.
+out/
+out2/
+node_modules/
