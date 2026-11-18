@@ -1,0 +1,86 @@
+/* Token Radar: a dark desk terminal. One palette, one type scale, no framework. */
+:root{
+  --bg:#0a101d; --panel:#101a2c; --panel2:#0d1524; --line:#22314d; --line2:#2c3f60;
+  --ink:#e8eef7; --mut:#93a3bd; --dim:#66779a;
+  --amber:#f2b13c; --teal:#2fd4b8; --green:#4ade80; --red:#f87171; --blue:#6aa9ff;
+  --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0 auto;max-width:1360px;padding:18px 22px 40px;color:var(--ink);
+  font:15px/1.5 var(--sans);background:var(--bg)}
+h1{font:700 26px/1.1 var(--sans);letter-spacing:.14em;margin:0}
+h2{font-size:19px;margin:26px 0 8px} h3{font-size:16px;margin:22px 0 6px}
+p{margin:8px 0} code{font:13px var(--mono);background:var(--panel);padding:1px 5px;border-radius:4px}
+a{color:var(--blue)}
+.top{border-bottom:2px solid var(--amber);padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px #2fd4b833,0 0 14px var(--teal)}
+.tag{font:12px var(--mono);color:var(--amber);border:1px solid #f2b13c66;border-radius:20px;padding:2px 9px}
+.sub{color:var(--mut);margin:8px 0 0;max-width:900px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.stats div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:150px}
+.stats dt{font:11px var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+.stats dd{margin:2px 0 0;font:700 20px var(--mono)}
+.stats dd small{font:12px var(--sans);color:var(--mut);font-weight:400}
+.tabs{display:flex;gap:8px;margin:16px 0 0}
+.tabs button{background:var(--panel);color:var(--mut);border:1px solid var(--line);border-radius:8px 8px 0 0;
+  padding:9px 18px;font:600 14px var(--sans);cursor:pointer}
+.tabs button.on{background:var(--panel2);color:var(--ink);border-color:var(--line2);border-bottom-color:var(--panel2)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:end;background:var(--panel2);
+  border:1px solid var(--line);border-radius:0 8px 8px 8px;padding:12px 14px}
+.controls label{font:12px var(--sans);color:var(--mut);display:flex;flex-direction:column;gap:4px}
+.controls label.check{flex-direction:row;align-items:center;gap:6px;padding-bottom:7px;color:var(--ink);font-size:14px}
+.controls input,.controls select{background:#0a1220;color:var(--ink);border:1px solid var(--line2);
+  border-radius:6px;padding:7px 9px;font:14px var(--sans)}
+.controls input[type=search]{width:210px}
+.controls select{min-width:130px}
+.count{margin-left:auto;font:13px var(--mono);color:var(--teal)}
+main{margin-top:0}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line)}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+thead th{font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--mut);
+  background:#0d1729;position:sticky;top:0;cursor:pointer;white-space:nowrap}
+thead th:hover{color:var(--ink)}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:#16233c}
+tbody tr.sel td{background:#1a2c47;box-shadow:inset 3px 0 0 var(--amber)}
+td.num,th.num,td.r{text-align:right;font-family:var(--mono);font-size:13.5px}
+td .bar{display:block;height:5px;background:#22314d;border-radius:3px;margin-top:4px;min-width:60px}
+td .bar i{display:block;height:5px;background:linear-gradient(90deg,var(--teal),var(--amber));border-radius:3px}
+.name{font-weight:650}
+.slug{font:11.5px var(--mono);color:var(--dim)}
+.badge{display:inline-block;font:700 10.5px var(--sans);letter-spacing:.05em;color:#0a101d;background:var(--amber);
+  border-radius:4px;padding:1px 6px;margin-left:7px;vertical-align:1px}
+.pill{display:inline-block;font:11.5px var(--mono);background:#0a1220;border:1px solid var(--line2);
+  border-radius:20px;padding:1px 8px;margin:1px 2px 1px 0;white-space:nowrap}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--mut)}
+.hint{color:var(--dim);font-size:13px}
+.lede{color:var(--mut);max-width:980px}
+.detail{margin:18px 0 8px;background:var(--panel);border:1px solid var(--amber);border-radius:10px;padding:18px 20px}
+.detail h2{margin:0 0 4px;font-size:22px}
+.detail .meta{color:var(--mut);font-size:13.5px}
+.detail .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.detail .grid div{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.detail .grid dt{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
+.detail .grid dd{margin:3px 0 0;font:700 18px var(--mono)}
+.detail .grid dd small{font:12px var(--sans);color:var(--mut);font-weight:400}
+.formula-box{font:13.5px var(--mono);background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;margin:12px 0;color:var(--ink);overflow-x:auto;white-space:nowrap}
+.formula-box b{color:var(--amber)}
+.steps{list-style:none;counter-reset:s;margin:14px 0 0;padding:0}
+.steps li{counter-increment:s;display:flex;gap:12px;padding:11px 4px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);flex:0 0 26px;height:26px;border-radius:50%;background:var(--teal);
+  color:#06231d;font:700 13px/26px var(--sans);text-align:center}
+.steps p{margin:0}
+.steps .ct{margin-top:4px;font:12px var(--mono);color:var(--mut)}
+.steps .ct b{color:var(--amber);font-weight:600}
+.note{color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding-top:10px}
+.formula{max-width:980px}
+.formula li{margin:9px 0}
+#methodView table{max-width:760px}
+.src{color:var(--dim);font-size:13px}
+footer{margin-top:26px;padding-top:12px;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+.skip{position:absolute;left:-999px}
+@media (max-width:900px){body{padding:12px}.controls input[type=search]{width:150px}td .bar{min-width:34px}}
